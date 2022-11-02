@@ -73,18 +73,8 @@ while True:
         
     elif(choice == 7):
         print('displays Total number of books for each category')
-        sql = 'SELECT COUNT(*) AS total_book_per_category,`book_categ` FROM `books_detail` GROUP BY `book_categ`'
-        mycursor.execute(sql)
-        result = mycursor.fetchall()
-        for i in result:
-            print(i)
     elif(choice == 8):
         print('Displays the character which you needed ')
-        st = input('Enter the starting character of book you need to display : ')
-        sql = "SELECT `id`, `book_name`, `book_categ`, `charge_p_day`, `Author_name`, `Established_date` FROM `books_detail` WHERE `book_name` LIKE '%"+st+"%'"
-        mycursor.execute(sql)
-        result = mycursor.fetchall()
-        print(result)
     elif(choice == 9):
         break
     
