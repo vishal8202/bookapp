@@ -80,6 +80,11 @@ while True:
             print(i)
     elif(choice == 8):
         print('Displays the character which you needed ')
+        st = input('Enter the starting character of book you need to display : ')
+        sql = "SELECT `id`, `book_name`, `book_categ`, `charge_p_day`, `Author_name`, `Established_date` FROM `books_detail` WHERE `book_name` LIKE '%"+st+"%'"
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+        print(result)
     elif(choice == 9):
         break
     
