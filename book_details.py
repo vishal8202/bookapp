@@ -43,6 +43,16 @@ while True:
         print(result)
     elif(choice==4):
         print('update the book selected')
+        charge_p_day = input('Enter the price for each day to be get updated : ')
+        name = input('Enter the book name : ')
+        category = input('Enter the category of the book : ')
+       
+        AuthorName = input('Enter the author name : ')
+        established = input('Enter the date of established : ')
+        sql = "UPDATE `books_detail` SET `book_name`='"+name+"',`book_categ`='"+category+"',`charge_p_day`='"+charge_p_day+"',`Author_name`='"+AuthorName+"',`Established_date`='"+established+"' WHERE `charge_p_day`="+charge_p_day
+        mycursor.execute(sql)
+        mydb.commit()
+        print('Updated sucessfully !!!')
     elif(choice==5):
         print('delete the book selected')
     elif(choice==6):
